@@ -30,14 +30,14 @@ function getdata() {
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>${data.bpi.USD.code}${data.bpi.USD.symbol}</td>
-          <td>${data.bpi.USD.rate}</td>
+          <td>${data.bpi.USD.code}</td>
+          <td>${data.bpi.USD.rate}${data.bpi.USD.symbol}</td>
       
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>${data.bpi.EUR.code}${data.bpi.EUR.symbol}</td>
-          <td>${data.bpi.EUR.rate}</td>
+          <td>${data.bpi.EUR.code}</td>
+          <td>${data.bpi.EUR.rate}${data.bpi.EUR.symbol}</td>
      
         </tr>
     
