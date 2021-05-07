@@ -40,13 +40,13 @@ function getdata() {
         <tr>
           <th scope="row">1</th>
           <td  >${data.bpi.USD.code}</td>
-          <td ><span id="usdtable" >${newusp}  ${data.bpi.USD.symbol}</span></td>
+          <td ><span class="colorchange" id="usdtable" >${newusp}  ${data.bpi.USD.symbol}</span></td>
       
         </tr>
         <tr>
           <th scope="row">2</th>
           <td >${data.bpi.EUR.code}</td>
-          <td ><span id="euptable">${neweup}  ${data.bpi.EUR.symbol}</span></td>
+          <td ><span class="colorchange" id="euptable">${neweup}  ${data.bpi.EUR.symbol}</span></td>
      
         </tr>
     
@@ -59,27 +59,53 @@ function getdata() {
 
 
 
-                      // compare old and new values
-if (newusp != oldusp) {
-  document.getElementById("usdtable").style.backgroundColor = "green";
-  document.getElementById("usdtable").style.color = "white";
-  setTimeout(() => {  document.getElementById("usdtable").style.backgroundColor = "white";
-  document.getElementById("usdtable").style.color = "black";
-}, 1000);
+
+if (newusp > oldusp) {
+
+  let all = document.getElementsByClassName('colorchange');
+  for (var i = 0; i < all.length; i++) {
+
+    all[i].style.backgroundColor = "green";
+    all[i].style.color = "white";
+
+    setTimeout(() => {  all[i].style.backgroundColor = "white";
+    all[i].style.color = "black";
+  }, 1000);
+
+  }
+
+
+
+
 
 }
 
-if (neweup != oldeup) {
-  document.getElementById("euptable").style.backgroundColor = "green";
-  document.getElementById("euptable").style.color = "white";
-  setTimeout(() => {  document.getElementById("euptable").style.backgroundColor = "white";
-  document.getElementById("euptable").style.color = "black";
-}, 1000);
+
+
+if (newusp < oldusp) {
+
+  let all = document.getElementsByClassName('colorchange');
+  for (var i = 0; i < all.length; i++) {
+
+    all[i].style.backgroundColor = "red";
+    all[i].style.color = "white";
+
+    setTimeout(() => {  all[i].style.backgroundColor = "white";
+    all[i].style.color = "black";
+  }, 1000);
+
+  }
+
+
+
+
+
 }
 
 
-  oldusp = newusp;
-  oldeup = neweup;
+oldusp = newusp;
+oldeup = neweup;
+
 
 
 
